@@ -106,25 +106,14 @@ Make a subfolder named stratum_secrets
 
     cd stratum_secrets
 
-You will need to save into this folder, one stratum.crt (certificate) and one stratum.key (key). To do this navigate to
+You will need to now generate a set of ssl key/certificate for your pool, to do this run the following command
 
-  https://raw.githubusercontent.com/BeamMW/beam/master/utility/unittest/test.crt
+    openssl req -x509 -newkey rsa:4096 -keyout beam-stratum-key.pem -out beam-stratum-crt.pem -days 3650 -nodes -subj '/CN=localhost’
 
-make a new file in your current directory
+Now rename the two files created in this process using.
 
-    nano stratum.crt
-
-Now copy & paste the contents of the page in your browser from the above link into that document you just created.
-
-And same process with the navigation to
-
-  https://raw.githubusercontent.com/BeamMW/beam/master/utility/unittest/test.key
-
-making the file in your current directory
-
-    nano stratum.key
-
-And copy & paste the contents of this page in your browser from the above link into that document you just created.
+    mv beam-stratum-key.pem stratum.key
+    mv beam-stratum-crt.pem stratum.crt
 
 You will now have one file stratum.key and one file stratum.crt in this folder. Go back up a level
 
