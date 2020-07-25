@@ -358,7 +358,7 @@ Amend the password to match your owner key password
 
 node address to listen the api server on
 
-    node_addr=127.0.0.1:101274
+    node_addr=127.0.0.1:10127
 
 port to start server on
 
